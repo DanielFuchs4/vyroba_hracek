@@ -3,10 +3,13 @@ import java.util.concurrent.Semaphore;
 public class Main {
     public static synchronized void main(String[] args) throws InterruptedException {
 
-            VyrobceHlav hlava = new VyrobceHlav();
-            VyrobceNohou nohy = new VyrobceNohou();
-            VyrobceRukou ruce = new VyrobceRukou();
-            VyrobceTel telo = new VyrobceTel();
+            SkladSoucastek soucastky = new SkladSoucastek();
+            SkladSurovin  suroviny = new SkladSurovin();
+
+            VyrobceHlav hlava = new VyrobceHlav("Honza", suroviny,soucastky);
+            VyrobceNohou nohy = new VyrobceNohou("Pepa",  suroviny,soucastky);
+            VyrobceRukou ruce = new VyrobceRukou("Franta",  suroviny,soucastky);
+            VyrobceTel telo = new VyrobceTel("Bonifác",   suroviny,soucastky);
             Thread t1 = new Thread(hlava);
             Thread t2 = new Thread(nohy);
             Thread t3 = new Thread(ruce);

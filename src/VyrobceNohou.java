@@ -4,8 +4,10 @@ public class VyrobceNohou extends Delnik {
 
     private int id = 4;
     private int naklady = 30;
-    private String jmeno;
 
+    public VyrobceNohou(String jmeno, SkladSurovin suroviny, SkladSoucastek soucastky) {
+        super(jmeno, suroviny, soucastky);
+    }
 
 
     public void vyrobNohy() throws InterruptedException {
@@ -29,6 +31,7 @@ public class VyrobceNohou extends Delnik {
             }
             try {
                 vyrobNohy();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

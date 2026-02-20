@@ -3,4 +3,11 @@ public abstract class Delnik implements Runnable {
     SkladSoucastek soucastky = new SkladSoucastek();
     private int id;
     private String jmeno;
+
+    public Delnik(String jmeno, SkladSurovin suroviny, SkladSoucastek soucastky) {
+        this.jmeno = jmeno;
+        this.suroviny = suroviny;
+        this.soucastky = soucastky;
+    }
+
 }

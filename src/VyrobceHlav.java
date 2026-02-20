@@ -1,14 +1,13 @@
-
 public class VyrobceHlav extends Delnik {
-
-
 
     private int id = 1;
     private int naklady = 10;
     private int vlasy = 2;
-    private String jmeno;
 
 
+    public VyrobceHlav(String jmeno, SkladSurovin suroviny, SkladSoucastek soucastky) {
+        super(jmeno, suroviny, soucastky);
+    }
 
     public void vyrobHlavu() throws InterruptedException {
         if (suroviny.overDostatekPlastu(naklady)){
@@ -31,6 +30,7 @@ public class VyrobceHlav extends Delnik {
             }
             try {
                 vyrobHlavu();
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
